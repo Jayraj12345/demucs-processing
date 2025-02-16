@@ -2,3 +2,4 @@ flask
 supabase
 gunicorn
 werkzeug
+demucs

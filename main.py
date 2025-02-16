@@ -32,7 +32,9 @@ def process_audio():
         f.write(response)
     
     # Run Demucs
-    command = f"demucs -d cpu --model=htdemucs {file_path}"
+    command = f"python3 -m demucs.separate -d cpu --two-stems=vocals {file_path}"
+
+
     subprocess.run(command, shell=True, check=True)
 
     output_folder = os.path.join(OUTPUT_FOLDER, "htdemucs", os.path.splitext(filename)[0])
